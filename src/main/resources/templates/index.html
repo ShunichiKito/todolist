@@ -32,6 +32,7 @@
           <tr>
             <th>Name</th>
             <th>Category</th>
+            <th>Time Created</th>
             <th>Complete</th>
           </tr>
         </thead>
@@ -40,6 +41,7 @@
                 <input type="hidden" th:field="*{todoList[__${i.index}__].id}"/>
                 <td th:text="${item.name}">Item_name</td><input type="hidden" th:field="*{todoList[__${i.index}__].name}"/>
                 <td th:text="${item.category}">item_category</td><input type="hidden" th:field="*{todoList[__${i.index}__].category}"/>
+                <td th:text="${item.timeCreated}">item_time_created</td><input type="hidden" th:field="*{todoList[__${i.index}__].timeCreated}"/>
                 <td><input type="checkbox" th:checked="${item.complete} == true" th:field="*{todoList[__${i.index}__].complete}"/></td>
             </tr>
         </tbody>

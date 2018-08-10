@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+
 import java.util.ArrayList;
 
 @Controller
@@ -34,10 +35,13 @@ public class TodoDemoController {
     @RequestMapping("/update")
     public String updateTodo(@ModelAttribute TodoListViewModel requestItems) {
         for (TodoItem requestItem : requestItems.getTodoList() ) {
-             TodoItem item = new TodoItem(requestItem.getCategory(), requestItem.getName());
-             item.setComplete(requestItem.isComplete());
-             item.setId(requestItem.getId());
-             repository.save(item);
+//             TodoItem item = new TodoItem(requestItem.getCategory(), requestItem.getName());
+//             item.setComplete(requestItem.isComplete());
+//             item.setId(requestItem.getId());
+//            repository.save(item);
+
+//              requestItem.setTimeCreated(new SimpleDateFormat("MMMM dd, YYYY").format(Calendar.getInstance().getTime()));
+            repository.save(requestItem);
         }
         return "redirect:/";
     }
